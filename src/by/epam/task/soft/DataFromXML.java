@@ -1,21 +1,21 @@
-package by.epam.task.main;
+package by.epam.task.soft;
 
 import by.epam.task.build.Soft;
 
 import java.util.List;
 import java.util.Objects;
 
-public class DOMparser {
+public class DataFromXML {
 
     private String type;
     private String name;
     private int size;
     private int price;
 
-    public DOMparser() {
+    public DataFromXML() {
     }
 
-    public DOMparser(String type, String name, int size, int price) {
+    public DataFromXML(String type, String name, int size, int price) {
         this.type = type;
         this.name = name;
         this.size = size;
@@ -26,7 +26,7 @@ public class DOMparser {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        DOMparser doMparser = (DOMparser) o;
+        DataFromXML doMparser = (DataFromXML) o;
         return size == doMparser.size && price == doMparser.price && Objects.equals(type, doMparser.type) && Objects.equals(name, doMparser.name);
     }
 
@@ -77,9 +77,9 @@ public class DOMparser {
         this.price = price;
     }
 
-    public static Soft setNewComputer(List<DOMparser> list, Soft computer) {
+    public static Soft setNewComputer(List<DataFromXML> list, Soft computer) {
 
-        for (DOMparser d : list) {
+        for (DataFromXML d : list) {
             switch (d.getType()) {
                 case "OS":
                     computer.os.setName(d.getName());

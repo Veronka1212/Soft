@@ -2,6 +2,7 @@ package by.epam.task.main;
 
 import by.epam.task.build.Soft;
 import by.epam.task.soft.Browser;
+import by.epam.task.soft.DataFromXML;
 import by.epam.task.soft.Driver;
 import by.epam.task.soft.OS;
 import org.w3c.dom.Document;
@@ -23,8 +24,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static by.epam.task.calc.Calculation.*;
-import static by.epam.task.main.DOMparser.setNewComputer;
+import static by.epam.task.calc.Calculation.overallPrice;
+import static by.epam.task.calc.Calculation.overallSize;
+import static by.epam.task.soft.DataFromXML.setNewComputer;
+
 
 public class Main {
 
@@ -34,14 +37,14 @@ public class Main {
         Document PC = builder.parse(ClassLoader.getSystemClassLoader().getResourceAsStream("PC.xml"));
         //парсим документ в древовидную структуру
 
-        List<DOMparser> parserTypeList = new ArrayList<>();
+        List<DataFromXML> parserTypeList = new ArrayList<>();
         NodeList nodeList = PC.getDocumentElement().getChildNodes();
         //итерация и извлечение данных
         for (int i = 0; i < nodeList.getLength(); i++) {
             Node node = nodeList.item(i);
             if (node instanceof Element) {
                 NodeList insideNodes = node.getChildNodes();
-                DOMparser typeList = new DOMparser();
+                DataFromXML typeList = new DataFromXML();
                 for (int j = 0; j < insideNodes.getLength(); j++) {
                     Node insideNode = insideNodes.item(j);
 

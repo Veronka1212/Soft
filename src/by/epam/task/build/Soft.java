@@ -1,6 +1,5 @@
 package by.epam.task.build;
 
-import by.epam.task.main.DOMparser;
 import by.epam.task.soft.Antivirus;
 import by.epam.task.soft.Browser;
 import by.epam.task.soft.Driver;
@@ -8,8 +7,6 @@ import by.epam.task.soft.Games;
 import by.epam.task.soft.IDE;
 import by.epam.task.soft.OS;
 import by.epam.task.soft.Office;
-
-import java.util.List;
 
 public class Soft {
 
